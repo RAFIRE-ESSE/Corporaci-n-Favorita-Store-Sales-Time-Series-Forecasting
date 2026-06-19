@@ -28,16 +28,16 @@ The codebase features a total of 513 cells across 50 notebook(s). The system imp
 
 ```mermaid
 flowchart TD
-    Images[Input Images] --> Pre[Image Preprocessing & Augmentation]
-    Pre --> Encoder[CNN / Vision Transformer Backbone]
-    Encoder --> Head[Classification Head & Softmax]
-    Head --> Loss[Loss Function: Cross Entropy]
-    Loss --> Train[Model Training & Optimization]
-    Train --> Pred[Inference & Probability Predictions]
-    style Images fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    Data[Sequential Historical Data] --> Pre[Lag, Rolling & Calendar Feature Engineering]
+    Pre --> Split[Temporal / Time-Series Validation Split]
+    Split --> Models[Forecasting Models: GBDT / LSTM / Prophet]
+    Models --> Loss[Loss Function: RMSE / RMSLE / MAE]
+    Loss --> Train[Model Training & Forecasting]
+    Train --> Pred[Future Demand & Sales Forecasts]
+    style Data fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
     style Pre fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
-    style Encoder fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
-    style Head fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Split fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Models fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
     style Loss fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
     style Train fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
     style Pred fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
